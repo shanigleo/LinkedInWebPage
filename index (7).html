@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shantae Gallegos | Biomedical Engineering Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+nav {
+    display: flex;
+    gap: 3rem;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--text-primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.hero h1 {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.hero-description {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out 1.1s both;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+/* SECTION STYLES */
+section {
+    padding: 8rem 4rem;
+    position: relative;
+}
+
+.section-header {
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+.section-number {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.2em;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ABOUT SECTION */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-top: 4rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.about-stats {
+    display: grid;
+    gap: 3rem;
+}
+
+.stat-item {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-family: 'Cormorant', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.tag {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+/* EDUCATION SECTION */
+.education-item {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-institution {
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.education-degree {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.education-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.focus-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.focus-item {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* EXPERIENCE TIMELINE */
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -3.35rem;
+    top: 3.5rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--text-primary);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.timeline-title {
+    font-family: 'Cormorant', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-org {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.timeline-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* CONTACT SECTION */
+.contact-content {
+    text-align: center;
+}
+
+.contact-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin-bottom: 3rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid var(--text-primary);
+    padding-bottom: 0.5rem;
+}
+
+.contact-link:hover {
+    color: var(--text-secondary);
+    border-bottom-color: var(--text-secondary);
+}
+
+/* FOOTER */
+footer {
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    nav {
+        gap: 2rem;
+    }
+
+    section {
+        padding: 6rem 2rem;
+    }
+
+    .hero {
+        padding: 6rem 2rem 4rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .research-card {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .timeline {
+        padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+        left: -2.35rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+</style>
+    
+</head>
+<body>
+    <div class="container">
+<header>
+    <a href="#home" class="logo">Shantae Gallegos</a>
+<nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+</header>
+
+        <main>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="hero-label">Biomedical Engineering • Medical Device Development • Mechanobiology</p>
+        <h1>Designing medical devices<br>that solve problems<br>at the intersection of<br>engineering and medicine</h1>
+        <p class="hero-description">
+           PhD researcher developing and characterizing medical device platforms for osteoarthritis research. Specializing in joint-on-chip systems, mechanical characterization, computational modeling (Abaqus), and translational device development. With a background in chemical engineering and pre-medical studies, I use engineering tools to answer biological questions and develop technologies that move research closer to clinical impact.
+        </p>
+        <div class="hero-cta">
+
+    </div>
+</section>
+
+
+<section id="about">
+    <div class="content-wrapper">
+        <div class="section-header">
+            <h2 class="section-title">About</h2>
+            <span class="section-number">01</span>
+        </div>
+        
+        <!-- Profile Picture -->
+        <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+            <div style="width: 280px; height: 280px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 3px solid var(--text-primary); box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1); background: var(--bg-secondary);">
+                <img src="headshot-profile.jpg" alt="Shantae Gallegos" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;">
+            </div>
+        </div>
+        
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>
+                   My path into biomedical engineering began with two interests that have always shaped the way I think: chemical engineering and medicine.
+                </p>
+                <p>
+                    As an undergraduate at the University of New Mexico, I studied chemical engineering while also pursuing pre-medical coursework, which gave me a strong foundation in materials, transport, chemistry, biology, and human health. I was drawn to the way engineering could be used not only to understand complex systems, but to create tools that help diagnose, treat, and improve disease outcomes.
+                     </p>
+                <p>
+                    Today, my PhD work at CU Boulder allows me to bridge those interests directly. I develop and characterize medical device platforms designed to support regenerative therapies and drug discovery for osteoarthritis. My research focuses on building a joint-on-chip system that recreates key features of the joint microenvironment, including cartilage-bone communication, biological signaling, and mechanical loading.
+                  </p>
+                <p>
+                 My work includes device development, mechanical characterization, experimental validation, and computational modeling using Abaqus. By designing the device, testing its performance, and modeling how it behaves under load, I aim to create a platform that can help researchers better understand osteoarthritis progression and evaluate future therapeutic strategies.   
+                      </p>
+                <p>
+                  I'm motivated by problems where engineering has a direct connection to human health—where materials, mechanics, biology, and medicine come together to create something useful, measurable, and impactful.  
+                </p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-item">
+                    <p class="stat-label">Current</p>
+                    <p class="stat-value">University of Colorado Boulder<br>PhD Student, Biomedical Engineering</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Background</p>
+                    <p class="stat-value">University of New Mexico<br>B.S. Chemical Engineering<br>May 2023</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-label">Recognition</p>
+                    <p class="stat-value">NSF Graduate Research Fellow<br>McNair Scholar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION SECTION -->
+<section id="education" style="background: var(--bg-secondary);">
+    <div class="content-wrapper">
+        <div class="section-header">
+            <h2 class="section-title">Education</h2>
+            <span class="section-number">02</span>
+        </div>
+
+        <div class="reveal">
+            <!-- CU Boulder -->
+            <div class="education-item">
+                <p class="education-institution">University of Colorado Boulder</p>
+                <p class="education-degree">Ph.D. Biomedical Engineering — In Progress</p>
+                <p class="education-degree">M.S. Biomedical Engineering — Completed</p>
+                <p class="education-meta">Focus: Medical device development, osteoarthritis research, regenerative therapies</p>
+            </div>
+
+            <!-- University of New Mexico -->
+            <div class="education-item">
+                <p class="education-institution">University of New Mexico</p>
+                <p class="education-degree">B.S. Chemical Engineering</p>
+                <p class="education-degree">Pre-Medical Coursework</p>
+                <p class="education-meta">Graduated May 2023 • GPA: 3.98 / 4.0</p>
+            </div>
+
+            <!-- Language Study -->
+            <div class="education-item">
+                <p class="education-institution">Escuela Superior de España</p>
+                <p class="education-degree">Intermediate Spanish, B1 Certification</p>
+                <p class="education-meta">Spanish language and cultural studies</p>
+            </div>
+
+            <!-- Focus Areas -->
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <p class="stat-label" style="margin-bottom: 1.5rem;">Research & Academic Focus Areas</p>
+                <div class="focus-areas">
+                    <div class="focus-item">Medical Device Development</div>
+                    <div class="focus-item">Osteoarthritis Research</div>
+                    <div class="focus-item">Regenerative Therapies</div>
+                    <div class="focus-item">Drug Discovery Platforms</div>
+                    <div class="focus-item">Joint-on-Chip Systems</div>
+                    <div class="focus-item">Mechanobiology</div>
+                    <div class="focus-item">Microfluidics</div>
+                    <div class="focus-item">Biomaterials</div>
+                    <div class="focus-item">Mechanical Characterization</div>
+                    <div class="focus-item">Abaqus Modeling</div>
+                    <div class="focus-item">Chemical Engineering</div>
+                    <div class="focus-item">Translational Medicine</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience">
+    <div class="content-wrapper">
+        <div class="section-header">
+            <h2 class="section-title">Research & Experience</h2>
+            <span class="section-number">03</span>
+        </div>
+
+        <div class="timeline reveal">
+            <!-- Graduate Researcher -->
+            <div class="timeline-item">
+                <p class="timeline-date">August 2023 – Present</p>
+                <h3 class="timeline-title">Graduate Researcher</h3>
+                <p class="timeline-org">Medical Device Development for Osteoarthritis Research | University of Colorado Boulder</p>
+                <div class="timeline-description">
+                    <p style="margin-bottom: 1rem;">Developing and characterizing a medical device platform designed to support regenerative therapies and drug discovery for osteoarthritis.</p>
+                    
+                    <p style="margin-bottom: 1rem;">My research focuses on a joint-on-chip system that models communication between cartilage and bone in a controlled microscale environment. The platform is designed to recreate important features of the joint microenvironment, including biological signaling and mechanical loading, to better understand early osteoarthritis disease processes.</p>
+                    
+                    <p style="margin-bottom: 1rem;">I am responsible for advancing the device's mechanical component through design, characterization, validation, and computational modeling. This includes evaluating device performance experimentally and using Abaqus to model mechanical behavior, optimize design decisions, and better understand how the system responds under physiologically relevant loading conditions.</p>
+                    
+                    <p style="margin-bottom: 1rem;">Over the past year, I have helped prepare the device for patenting by characterizing and validating its mechanical performance. I have also explored new design strategies beyond the original pneumatic approach, including magnetic PDMS-based concepts for controlled mechanical stimulation.</p>
+                    
+                    <p style="color: var(--text-primary); font-weight: 500; margin-top: 1rem;">Key Achievement: Collaborative Research Contribution — On-Chip Membrane Characterization</p>
+                    <p>Contributed to a collaborative project characterizing membranes for integration into the joint-on-chip system. This work led to the submission of a manuscript on which I served as second author.</p>
+                </div>
+            </div>
+
+            <!-- Sandia National Laboratories -->
+            <div class="timeline-item">
+                <p class="timeline-date">November 2022 – August 2023</p>
+                <h3 class="timeline-title">Research & Development Intern</h3>
+                <p class="timeline-org">Sandia National Laboratories | Connectors & LACs</p>
+                <div class="timeline-description">
+                    <p style="margin-bottom: 1rem;">Contributed to rapid prototyping and development of electrical connectors using advanced additive manufacturing techniques.</p>
+                    
+                    <p style="margin-bottom: 1rem;">Worked with SLA, DLP, and FDM 3D printing platforms to improve manufacturability, reduce lead times, and support technical research in polymer chemistry and printed component performance.</p>
+                    
+                    <p>Designed and tested parts using SolidWorks, 3D printing, and injection molding processes while independently presenting research to Sandia scientists and technical staff.</p>
+                </div>
+            </div>
+
+            <!-- UNM Orthopedic Biomechanics -->
+            <div class="timeline-item">
+                <p class="timeline-date">January 2022 – October 2022</p>
+                <h3 class="timeline-title">Research Technician</h3>
+                <p class="timeline-org">UNM Orthopedic Biomechanics & Biomaterials Laboratory</p>
+                <div class="timeline-description">
+                    <p style="margin-bottom: 1rem;">Investigated 3D-printable biopolymer formulations for bone scaffold applications in tissue regeneration.</p>
+                    
+                    <p>Engineered synthetic biopolymers with mechanical properties designed to mimic native bone, developed testing protocols for scaffold biocompatibility, and gained hands-on experience in polymer synthesis, 3D printing, MATLAB scripting, mammalian cell culture, and scaffold fabrication.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEADERSHIP SECTION -->
+<section id="leadership" style="background: var(--bg-secondary);">
+    <div class="content-wrapper">
+        <div class="section-header">
+            <h2 class="section-title">Leadership & Recognition</h2>
+            <span class="section-number">04</span>
+        </div>
+
+        <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            
+            <!-- NSF Scholar Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Award</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">NSF Graduate Research Fellow</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">Supported by the NSF Graduate Research Fellowship for research at the intersection of biomedical engineering, mechanobiology, medical device development, and translational osteoarthritis research.</p>
+            </div>
+
+            <!-- LSAMP Scholar Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Scholarship</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">LSAMP Scholar</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">Recognized through the Louis Stokes Alliance for Minority Participation program, which supports the success, retention, and advancement of students from underrepresented backgrounds in STEM.</p>
+            </div>
+
+            <!-- McNair Scholar Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Recognition</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">McNair Scholar</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">Recognized for academic achievement, research promise, and commitment to graduate-level scholarship.</p>
+            </div>
+
+            <!-- BMEGSO Events Coordinator Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Leadership</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">BMEGSO Events Coordinator</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">Served as Events Coordinator for the CU Biomedical Engineering Graduate Student Organization, planning social, educational, and professional development events to strengthen community across graduate student cohorts.</p>
+            </div>
+
+            <!-- Outreach Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Outreach</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">STEM Outreach & Community Engagement</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">Engaged students from diverse backgrounds through outreach events focused on research exposure, musculoskeletal health, STEM pathways, and real-world problem solving.</p>
+                <ul style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; padding-left: 1.25rem; margin: 0;">
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">Triple E Fair:</strong> Shared lab research through an interactive booth and discussed joint health, biomedical engineering, and musculoskeletal health with students.</li>
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">Reverse Science Fair:</strong> Presented research to high school students and received an award after students selected my poster as their favorite at the second-annual event.</li>
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">LSAMP High School Outreach:</strong> Participated in small-group conversations with high school students to increase exposure to college, graduate school, and research pathways.</li>
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">Northglenn High School Fair Judge:</strong> Served as a panelist and judge for students using a Problem-Based Learning model to solve authentic STEM challenges.</li>
+                </ul>
+            </div>
+
+            <!-- Mentorship Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Mentorship</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">STEM Mentorship</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">Mentored students across academic stages by supporting graduate school navigation, research development, coursework balance, and STEM retention.</p>
+                <ul style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; padding-left: 1.25rem; margin: 0;">
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">LSAMP Mentor:</strong> 2024–2025 and 2025–2026</li>
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">SPUR Mentor:</strong> Summer 2025</li>
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">DLA Mentor:</strong> 2025–2026</li>
+                    <li><strong style="color: var(--text-primary); font-weight: 400;">SMART Mentor:</strong> Summer 2026</li>
+                </ul>
+            </div>
+
+            <!-- D1 Athlete Card -->
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; border-left: 4px solid var(--text-primary); transition: all 0.3s ease;">
+                <p style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">Athletics</p>
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2;">D1 Athlete</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">CU Boulder Cheerleader and collegiate-level gymnast. Built discipline, resilience, teamwork, and the ability to perform under pressure through competitive athletics.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+        
+<!-- SKILLS SECTION -->
+<section id="skills">
+    <div class="content-wrapper">
+        <div class="section-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <span class="section-number">05</span>
+        </div>
+
+        <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <!-- Medical Device Development -->
+            <div style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; border-left: 3px solid var(--text-primary); transition: all 0.3s ease;">
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Medical Device Development</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span class="tag">Device Design</span>
+                    <span class="tag">Mechanical Characterization</span>
+                    <span class="tag">Mechanical Validation</span>
+                    <span class="tag">Design Iteration</span>
+                    <span class="tag">Experimental Testing</span>
+                    <span class="tag">Patent-Ready Development</span>
+                </div>
+            </div>
+
+            <!-- Modeling & Simulation -->
+            <div style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; border-left: 3px solid var(--text-primary); transition: all 0.3s ease;">
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Modeling & Simulation</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span class="tag">Abaqus</span>
+                    <span class="tag">Finite Element Modeling</span>
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Protocol Development</span>
+                </div>
+            </div>
+
+            <!-- Microfluidics & Mechanobiology -->
+            <div style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; border-left: 3px solid var(--text-primary); transition: all 0.3s ease;">
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Microfluidics & Mechanobiology</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span class="tag">Joint-on-Chip Systems</span>
+                    <span class="tag">Cartilage-Bone Communication</span>
+                    <span class="tag">Osteoarthritis Modeling</span>
+                    <span class="tag">Mechanical Loading</span>
+                    <span class="tag">Pneumatic Concepts</span>
+                    <span class="tag">Magnetic PDMS Designs</span>
+                </div>
+            </div>
+
+            <!-- Biomaterials & Lab Techniques -->
+            <div style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; border-left: 3px solid var(--text-primary); transition: all 0.3s ease;">
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Biomaterials & Lab Techniques</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span class="tag">Biopolymer Synthesis</span>
+                    <span class="tag">Polymer Characterization</span>
+                    <span class="tag">Scaffold Fabrication</span>
+                    <span class="tag">Cell Culture</span>
+                    <span class="tag">Cell Viability Assays</span>
+                    <span class="tag">Membrane Integration</span>
+                </div>
+            </div>
+
+            <!-- Design & Engineering Tools -->
+            <div style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; border-left: 3px solid var(--text-primary); transition: all 0.3s ease;">
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Design & Engineering Tools</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">3D Printing (SLA, DLP, FDM)</span>
+                    <span class="tag">Injection Molding</span>
+                    <span class="tag">Design for Manufacturability</span>
+                    <span class="tag">LabVIEW</span>
+                    <span class="tag">Excel</span>
+                </div>
+            </div>
+
+            <!-- Microscopy & Characterization -->
+            <div style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; border-left: 3px solid var(--text-primary); transition: all 0.3s ease;">
+                <h3 style="font-family: 'Cormorant', serif; color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Microscopy & Analysis</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span class="tag">Confocal Microscopy</span>
+                    <span class="tag">ImageJ</span>
+                    <span class="tag">Mechanical Testing</span>
+                    <span class="tag">Hydrophilicity Testing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+<!-- CONTACT SECTION -->
+<section id="contact" style="background: var(--bg-secondary);">
+    <div class="content-wrapper">
+        <div class="contact-content reveal">
+            <h2 class="contact-title">Let's build technology<br>where engineering<br>meets medicine</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">I'm interested in opportunities that combine biomedical engineering, medical device development, computational modeling, biomaterials, and translational research to solve meaningful problems in human health.</p>
+            <div class="contact-links">
+                <a href="mailto:Shantae.Gallegos@colorado.edu" class="contact-link">Shantae.Gallegos@colorado.edu</a>
+                <a href="https://www.linkedin.com/in/shantae-gallegos-3314a3247/" target="_blank" class="contact-link">LinkedIn</a>
+                <a href="https://github.com/shantaegallegos" target="_blank" class="contact-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+</section>
+           
+        <footer>
+    <p>© 2025 Shantae Gallegos • Biomedical Engineering • University of Colorado Boulder</p>
+</footer>
+    </div>
+</body>
+    <script>
+    // Scroll reveal animation
+    function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    </script>
+</html>
